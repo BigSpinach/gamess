@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>飞机大战游戏</title>
+	</head>
+	<body>
+		<meter min="20" max="100" value="82"></meter>
+		<div style="margin:0 auto;width: 480px;height: 650px;background: #ddd;text-align: center;vertical-align: middle;">
+			<canvas id="canvas" width="480px" height="650px"></canvas>
+		</div>
+	</body>
+	
+	
+	<script type="text/javascript">
+		//00 游戏的初始化阶段
+		//01 获取canvas元素，创建画布对象
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+		//02获取花部的宽和高
+		const WIDTH = canvas.width;
+		const HEIGHT = canvas.height;
+		//04初始化游戏的5个阶段
+		const START = 0;
+		const LOADDING = 1;
+		const RUNNING = 2;
+		const PAUSED = 3;
+		const GAMEOVER = 4;
+		//03定义标识用于表示游戏的当前状态
+		var status = START;
+		
+		//1游戏的欢迎阶段
+		//1.1操作游戏的背景图片
+			//1.11加载图片
+			var imgs = new Image();
+			imgs.src = "images/background.png";
+			
+			//1.12初始化有关背景的数据
+			var SKY = {
+				imgs : imgs,
+				width :480,
+				height :852
+				
+				
+			}
+			//1.13创建操作背景的构造器
+			function Sky(config){
+				//初始化数据
+				this.width = config.width;
+				this.height = config.height;
+				this.imgs = config.imgs;
+				//图片的坐标
+				this.x1 =0;
+				this.y1 =0;
+				this.x2 =0;
+				this.y2 =-this.height;
+				//绘制方法
+				this.paint = function(config){
+					config.drawImage(this.imgs,this.x1,this.y1);
+					config.drawImage(this.imgs,this.x2,this.y2);
+					
+				}
+				//移动方法
+				this.step = function(){
+					this.y1++;
+					this.y2++;
+					if(this.y1==this.height){
+						this.y1 = -this.width;
+					}
+					if(this.y2==this.height){
+						this.y2 = -this.width;
+					}
+					
+				}
+			}
+			//1.14创建操作背景图片的对象
+			var sky = new Sky(SKY);
+		//1.2操作游戏的logo图片
+		var logo =new Image();
+		logo.src = "images/start.png";
+		
+		//定义游戏的核心控制器
+		setInterval(function(){
+			//绘制背景
+			sky.paint(context);
+			//移动背景
+			sky.step();
+			context.drawImage(logo,30,0);
+			
+			
+		},100);
+	</script>
+</html>

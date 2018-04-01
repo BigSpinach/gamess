@@ -1,0 +1,338 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Arial,"Microsoft YaHei";
+	font-size: 14px;
+	background: #fff;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.container {
+	width: 1100px;
+	margin: 0 auto;
+}
+.container:before {
+	content: " ";
+	display: table;
+}
+.container:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+/**任务：创建index02.html/basic02.css
+为每个布局框设置高度/边框/背景**/
+
+.navbar {
+	border: 1px solid #aaa;
+	height: 50px;
+	background: #fff;
+}
+.banner {
+	border: 1px solid #aaa;
+	height: 700px;
+	background: #fff url("images/bg_1.jpg") no-repeat center center;
+}
+.banner h3 {
+	width: 455px;
+	height: 55px;
+	margin: 135px auto 0;
+	background: url("images/iconlist_1.png") no-repeat -870px 0;
+}
+.banner p {
+	width: 412px;
+	height: 20px;
+	margin: 30px auto 0;
+	background: url("images/iconlist_1.png") no-repeat -890px -80px;
+}
+.banner .pielist {
+	position: relative;
+	left: 160px;
+	top: 85px;
+}
+.banner .pie {
+	position: absolute;
+}
+.banner .pie i {
+	width: 173px;
+	height: 173px;
+	display: block;
+	background-image: url("images/iconlist_1.png");
+}
+.banner .pie b {
+	width: 173px;
+	height: 20px;
+	display: block;
+	background: url("images/iconlist_1.png") no-repeat -864px -130px;
+	margin-top: -5px;
+}
+.banner .p1 {
+	left: 0px;
+	/*left: -740px;*/
+	z-index: 10;
+	animation: p1Anim 1000ms linear;
+	-webkit-animation: p1Anim 1000ms linear;
+}
+.banner .p1 i {
+	background-position: 0 0;
+}
+@keyframes p1Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 0;
+	}
+}
+@-webkit-keyframes p1Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 0;
+	}
+}
+.banner .p2 {
+	left: 153px;
+	z-index: 11;
+	animation: p2Anim 1207ms linear;
+	-webkit-animation: p2Anim 1207ms linear;
+}
+.banner .p2 i {
+	background-position: -174px 0;
+}
+@keyframes p2Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 153px;
+	}
+}
+@-webkit-keyframes p2Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 153px;
+	}
+}
+.banner .p3 {
+	left: 306px;
+	z-index: 12;
+	animation: p3Anim 1414ms linear;
+	-webkit-animation: p3Anim 1414ms linear;
+}
+.banner .p3 i {
+	background-position: -348px 0;
+}
+@keyframes p3Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 306px;
+	}
+}
+@-webkit-keyframes p3Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 306px;
+	}
+}
+.banner .p4 {
+	left: 459px;
+	z-index: 13;
+	animation: p4Anim 1620ms linear;
+	-webkit-animation: p4Anim 1620ms linear;
+}
+.banner .p4 i {
+	background-position: -522px 0;
+}
+@keyframes p4Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 459px;
+	}
+}
+@-webkit-keyframes p4Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 459px;
+	}
+}
+.banner .p5 {
+	left: 612px;
+	z-index: 14;
+	animation: p5Anim 1827ms linear;
+	-webkit-animation: p5Anim 1827ms linear;
+}
+.banner .p5 i {
+	background-position: -696px 0;
+	animation: p5Rotate 1827ms linear;
+	-webkit-animation: p5Rotate 1827ms linear;
+}
+@keyframes p5Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 612px;
+	}
+}
+@-webkit-keyframes p5Anim {
+	0% {
+		left: -740px;
+	}
+	100% {
+		left: 612px;
+	}
+}
+@keyframes p5Rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1080deg);
+	}
+}
+@-webkit-keyframes p5Rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1080deg);
+	}
+}
+
+
+
+.reminder {
+	border: 1px solid #aaa;
+	height: 700px;
+	background: #fff;
+}
+.call {
+	border: 1px solid #aaa;
+	height: 700px;
+	background: #fff url("images/bg_2.jpg") no-repeat center center;
+}
+.call .desc {
+	width: 520px;
+	height: 525px;
+	background: url("images/iconlist_2.png") no-repeat 0 0;
+	margin-top: 100px;
+	float: left;
+}
+.call .phone {
+	width: 250px;
+	height: 530px;
+	background: url("images/iconlist_2.png") no-repeat -568px -1px;
+	float: left;
+	margin-left: 50px;
+	margin-top: 100px;
+	transition: transform .3s linear;
+}
+.call .phone:hover {
+	transform: rotate(30deg);
+}
+.smart {
+	border: 1px solid #aaa;
+	height: 740px;
+	background: #fff url("images/bg_3.jpg") no-repeat center center;
+}
+.location {
+	border: 1px solid #aaa;
+	height: 700px;
+	background: #fff url("images/bg_4.jpg") no-repeat center center;
+}
+.iconlist {
+	border: 1px solid #aaa;
+	height: 600px;
+	background: #fff;
+}
+.iconlist .icon {
+	display: block;
+	width: 80px;
+	height: 80px;
+	background: url("images/iconlist_3.png") no-repeat 0 0;
+}
+.iconlist .icon:hover {
+	animation: iconBlink .6s linear;
+	-webkit-animation: iconBlink .6s linear;
+}
+@keyframes iconBlink {
+	0% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	25% {
+		transform: rotate(15deg);
+		opacity: .5;
+	}
+	50% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	75% {
+		transform: rotate(-15deg);
+		opacity: .5;
+	}
+	100% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes iconBlink {
+	0% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	25% {
+		transform: rotate(15deg);
+		opacity: .5;
+	}
+	50% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	75% {
+		transform: rotate(-15deg);
+		opacity: .5;
+	}
+	100% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+.footer {
+	border: 1px solid #aaa;
+	height: 275px;
+	background: #545454;
+}
+
+
+/**任务：创建index04.html/basic04.css
+编写banner中的内容
+**/
+
